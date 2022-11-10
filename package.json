@@ -1,0 +1,48 @@
+{
+  "name": "@jsweibo/password-generator-core",
+  "version": "1.0.0",
+  "description": "It can generate a unique password based on some information you provide",
+  "main": "dist/index.node.js",
+  "browser": "dist/index.browser.js",
+  "scripts": {
+    "build.node": "cross-env BROWSERSLIST_ENV='node' babel src/index.js --out-file dist/index.node.js",
+    "build.browser": "cross-env BROWSERSLIST_ENV='browser' babel src/index.js --out-file dist/index.browser.js",
+    "build": "npm run build.node && npm run build.browser",
+    "lint": "eslint src test",
+    "prettier": "prettier --write src test",
+    "test": "node test/index.js",
+    "target.node": "cross-env BROWSERSLIST_ENV='node' browserslist",
+    "target.browser": "cross-env BROWSERSLIST_ENV='browser' browserslist",
+    "target": "npm run target.node && npm run target.browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jsweibo/password-generator-core.git"
+  },
+  "keywords": [
+    "password-generator-core"
+  ],
+  "author": "jsweibo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsweibo/password-generator-core/issues"
+  },
+  "homepage": "https://github.com/jsweibo/password-generator-core#readme",
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.17.2",
+    "core-js": "^3.21.1",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "browserslist": "^4.20.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}
